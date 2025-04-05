@@ -21,7 +21,7 @@ I'm passionate about languages and love cute visual styles. I wanted to make som
 
 ## 📸 Screenshots
 
-*(Add your app screenshots here to show off the interface!)*
+![App Screenshot](./assets/screenshot.png)
 
 ## 🚀 Getting Started
 
