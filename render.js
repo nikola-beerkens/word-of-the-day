@@ -38,11 +38,12 @@ async function loadWordOfTheDay() {
 
   function speakPolish(text) {
     if (!text) return;
-    window.speechSynthesis.cancel(); // cancel any ongoing speech
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'pl-PL';
-    utterance.rate = 0.30;
-    window.speechSynthesis.speak(utterance);
+    // window.speechSynthesis.cancel(); // cancel any ongoing speech
+    // const utterance = new SpeechSynthesisUtterance(text);
+    // utterance.lang = 'pl-PL';
+    // utterance.rate = 0.30;
+    // window.speechSynthesis.speak(utterance);
+    responsiveVoice.speak(text, "Polish Female", {rate: 0.8});
   }
   
   module.exports = { speakPolish };

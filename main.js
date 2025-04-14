@@ -1,6 +1,8 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require("path");
 const { getPolishWord } = require('./fetch');
+const log = require('electron-log');
+
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -16,7 +18,7 @@ function createWindow() {
   });
 
   win.loadFile('index.html');
-  // win.webContents.openDevTools();
+  //win.webContents.openDevTools();
 }
 
 app.whenReady().then(createWindow);
@@ -25,12 +27,15 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit()
 });
 
+// Inside your Puppeteer handler
 ipcMain.handle('fetch-polish-word', async () => {
   try {
+    log.info('Fetching Polish word...');
     const word = await getPolishWord();
+    log.info('Fetched:', word);
     return word;
   } catch (error) {
-    console.error('Error fetching word:', error);
+    log.error('Error fetching word:', error);
     return { polish: 'Error', english: 'Could not fetch word' };
   }
 });
