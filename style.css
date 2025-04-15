@@ -33,19 +33,12 @@
 }
 
 .play-frame {
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
   overflow: hidden;
   position: relative;
 }
 
-.logo-social-media-youtube-circle-streamline-pixel-1 {
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
 .close-btn {
   background: #ffb0a3;
@@ -92,7 +85,7 @@
   text-align: center;
   font-family: "Pixelify Sans", sans-serif;
   font-size: 20px;
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
 .word {
@@ -104,6 +97,47 @@
   text-align: center;
   padding: 0;
   margin: 0;
+}
+
+
+
+.play-icon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+}
+.sentence-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 25px 30px 0 30px;
+}
+
+.sentence-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sentence {
+  color: #46425e;
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.sentence-indent {
+  padding-left: 38px; /* match play button + gap */
+  margin-top: 10px;
+}
+
+#polish{
+  font-size: 17px;
 }
 
 .box {
@@ -121,7 +155,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-top: 40px;
+  margin:20px 10px 10px 10px;
 }
 
 .loader {

@@ -20,14 +20,27 @@
     </div>
     <div id="loader" class="loader">Fetching word of the day...</div>
     <div class="column">
-      <div class="play">
+      <div id="play-word" class="play">
         <div class="play-frame">
-          <img class="logo-social-media-youtube-circle-streamline-pixel-1" src="play_frame.svg" />
+          <img id="icon-word" class="play-icon" src="play_frame.svg" />
         </div>
       </div>
       <div class="word">WORD</div>
     </div>
     <div class="meaning">MEANING IN ENGLISH</div>
+
+    <div class="sentence-wrapper">
+      <div class="sentence-line">
+        <div id="play-sentence" class="play" style="transform: scale(0.7);">
+          <div class="play-frame">
+            <img id="icon-sentence" class="play-icon" src="play_frame.svg" />
+          </div>
+        </div>
+        <div class="sentence" id="polish">Łabędź pływa po jeziorze.</div>
+      </div>
+      <div class="sentence sentence-indent" id="english">The swan is swimming in the lake.</div>
+    </div>
+    
     
     <img class="clouds" src="clouds.png" />
   </div>
