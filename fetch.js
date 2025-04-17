@@ -3,18 +3,16 @@ const path = require('path');
 const fs = require('fs');
 const log = require('electron-log');
 
-function getChromiumExecPath() {
-  const basePath = process.resourcesPath || __dirname;
-  const execPath = path.join(basePath, 'chrome-win', 'chrome.exe');
-  return execPath;
-}
+// function getChromiumExecPath() {
+//   const basePath = process.resourcesPath || __dirname;
+//   const execPath = path.join(basePath, 'chrome-win', 'chrome.exe');
+//   return execPath;
+// }
 
 async function getPolishWord() {
   try {
     const browser = await puppeteer.launch({
       headless: true,
-    //  executablePath: getChromiumExecPath(),
-      executablePath: "C:/Users/nikol/Desktop/word-of-the-day/chromium/chrome-win/chrome.exe",
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 

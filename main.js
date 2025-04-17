@@ -11,6 +11,7 @@ function createWindow() {
     frame: false,
     transparent: true,
     resizable: false,
+    icon: path.join(__dirname, 'assets', 'photo-book.ico'),
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false

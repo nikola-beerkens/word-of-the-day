@@ -1,42 +1,32 @@
 {
   "name": "word-of-the-day",
   "version": "1.0.0",
+  "description": "A simple word of the day app",
   "main": "main.js",
+  "author": "Nikola Beerkens",
+  "license": "ISC",
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "start": "electron .",
+    "build": "electron-builder"
   },
-  "config": {
-    "forge": {
-      "makers": [
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "win32"
-          ]
-        }
-      ]
+  "build": {
+    "appId": "com.teggl.wordoftheday",
+    "productName": "Word of the Day",
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "directories": {
+      "buildResources": "build"
     }
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
-    "@electron-forge/cli": "^7.8.0",
-    "@electron-forge/maker-deb": "^7.8.0",
-    "@electron-forge/maker-rpm": "^7.8.0",
-    "@electron-forge/maker-squirrel": "^7.8.0",
-    "@electron-forge/maker-zip": "^7.8.0",
-    "@electron-forge/plugin-auto-unpack-natives": "^7.8.0",
-    "@electron-forge/plugin-fuses": "^7.8.0",
-    "@electron/fuses": "^1.8.0",
-    "electron": "^35.1.4"
+    "electron": "^35.1.4",
+    "electron-builder": "^24.13.2"
   },
   "dependencies": {
     "electron-log": "^5.3.3",
-    "electron-squirrel-startup": "^1.0.1",
-    "puppeteer": "^24.6.0"
+    "puppeteer": "^24.6.1",
+    "strip-ansi": "^7.1.0"
   }
 }
