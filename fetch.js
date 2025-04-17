@@ -3,16 +3,23 @@ const path = require('path');
 const fs = require('fs');
 const log = require('electron-log');
 
-// function getChromiumExecPath() {
-//   const basePath = process.resourcesPath || __dirname;
-//   const execPath = path.join(basePath, 'chrome-win', 'chrome.exe');
-//   return execPath;
-// }
+function getChromiumExecPath() {
+  const isPackaged = process.mainModule?.filename.includes('app.asar');
+  const basePath = isPackaged ? process.resourcesPath : __dirname;
+  const execPath = path.join(basePath,'chromium','chrome-win', 'chrome.exe');
+
+  if (!fs.existsSync(execPath)) {
+    console.error('⚠️ Chromium executable not found at:', execPath);
+  }
+
+  return execPath;
+}
 
 async function getPolishWord() {
   try {
     const browser = await puppeteer.launch({
       headless: true,
+      executablePath: getChromiumExecPath(),
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 

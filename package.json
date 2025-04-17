@@ -1,6 +1,6 @@
 {
   "name": "word-of-the-day",
-  "version": "1.0.0",
+  "version": "1.0.10",
   "description": "A simple word of the day app",
   "main": "main.js",
   "author": "Nikola Beerkens",
@@ -10,6 +10,12 @@
     "build": "electron-builder"
   },
   "build": {
+    "extraResources": [
+      {
+        "from": "chromium",
+        "to": "chromium"
+      }
+    ],
     "appId": "com.teggl.wordoftheday",
     "productName": "Word of the Day",
     "win": {
