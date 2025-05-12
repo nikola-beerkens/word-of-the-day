@@ -26,6 +26,7 @@
       "target": "dmg",
       "icon": "build/icon.icns"
     },
+    "publish": null,
     "directories": {
       "buildResources": "build"
     }
